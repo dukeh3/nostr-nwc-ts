@@ -1,0 +1,46 @@
+{
+  "name": "@dukeh3/nostr-nwc",
+  "version": "0.1.0",
+  "description": "NIP-47 (NWC) + NIP-XX (NNC) client SDK for Nostr",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./nip47": {
+      "types": "./dist/nip47.d.ts",
+      "import": "./dist/nip47.js",
+      "require": "./dist/nip47.cjs"
+    },
+    "./nipXX": {
+      "types": "./dist/nipXX.d.ts",
+      "import": "./dist/nipXX.js",
+      "require": "./dist/nipXX.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "nostr-tools": ">=2.1.0"
+  },
+  "devDependencies": {
+    "nostr-tools": "^2.23.1",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0",
+    "ws": "^8.20.0"
+  },
+  "license": "MIT"
+}

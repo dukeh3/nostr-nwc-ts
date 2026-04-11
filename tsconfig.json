@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "lib": ["ES2022", "DOM"]
+  },
+  "include": ["nip47.ts", "nipXX.ts", "src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "tests"]
+}
