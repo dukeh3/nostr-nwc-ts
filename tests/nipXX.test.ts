@@ -564,10 +564,17 @@ describe('NncClient', () => {
 
       await new Promise((r) => setTimeout(r, 50))
 
-      expect(handler).toHaveBeenCalledWith({
-        notification_type: 'channel_opened',
-        notification: { channel_id: 'ch1' },
-      })
+      expect(handler).toHaveBeenCalledWith(
+        {
+          notification_type: 'channel_opened',
+          notification: { channel_id: 'ch1' },
+        },
+        expect.objectContaining({
+          eventId: expect.any(String),
+          authorPubkey: expect.any(String),
+          createdAt: expect.any(Number),
+        }),
+      )
 
       unsub()
       client.close()

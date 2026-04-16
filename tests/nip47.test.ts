@@ -811,10 +811,17 @@ describe('NwcClient', () => {
       // Wait for the notification to be delivered
       await new Promise((r) => setTimeout(r, 50))
 
-      expect(handler).toHaveBeenCalledWith({
-        notification_type: 'payment_received',
-        notification: { amount: 1000 },
-      })
+      expect(handler).toHaveBeenCalledWith(
+        {
+          notification_type: 'payment_received',
+          notification: { amount: 1000 },
+        },
+        expect.objectContaining({
+          eventId: expect.any(String),
+          authorPubkey: expect.any(String),
+          createdAt: expect.any(Number),
+        }),
+      )
 
       unsub()
       client.close()
