@@ -180,10 +180,10 @@ export interface ChannelFeeInfo {
   id: string
   short_channel_id?: string
   peer_pubkey: string
-  base_fee_msat: number
+  base_fee: number    // value in msats
   fee_rate: number
-  min_htlc_msat?: number
-  max_htlc_msat?: number
+  min_htlc?: number   // value in msats
+  max_htlc?: number   // value in msats
 }
 
 export interface GetChannelFeesParams {
@@ -196,10 +196,10 @@ export interface GetChannelFeesResult {
 
 export interface SetChannelFeesParams {
   id?: string
-  base_fee_msat?: number
+  base_fee?: number   // value in msats
   fee_rate?: number
-  min_htlc_msat?: number
-  max_htlc_msat?: number
+  min_htlc?: number   // value in msats
+  max_htlc?: number   // value in msats
 }
 
 export interface GetForwardingHistoryParams {
@@ -294,10 +294,10 @@ export interface GetNetworkNodeParams {
 export type GetNetworkNodeResult = NetworkNodeInfo
 
 export interface ChannelPolicy {
-  base_fee_msat: number
+  base_fee: number   // value in msats
   fee_rate: number
-  min_htlc_msat: number
-  max_htlc_msat: number
+  min_htlc: number   // value in msats
+  max_htlc: number   // value in msats
   time_lock_delta: number
   disabled: boolean
   last_update: number
