@@ -43,5 +43,5 @@
     "vitest": "^2.0.0",
     "ws": "^8.20.0"
   },
-  "license": "MIT"
+  "license": "GPL-3.0-or-later"
 }
